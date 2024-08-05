@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #d32f2f;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+}
+main {
+  background-image: url(./assets/fondo.png);
+  background-repeat: repeat;
+  background-position: 100%;
+}
+.titulo {
+  font-size: xx-large;
+  font-family: fantasy;
+  text-decoration: underline;
+}
+.tituloFormulario {
+  font-size: 20px;
+  text-decoration: underline;
+}
+/* Formulario */
+.formulario {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  margin: auto;
+  max-width: 100;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px 0;
+  margin: auto;
+  font-size: larger;
+}
+
+label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  padding: 10px;
+}
+
+input[type="text"],
+select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+button {
+  background-color: #d32f2f;
+  color: white;
+  border: none;
+  border-radius: 7px;
+  padding: 10px 15px;
+  margin: auto;
+  font-size: 26px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #c62828;
+}
+
+/* Cards */
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 10px;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+  margin: 0 0 10px 0;
+  color: #d32f2f;
+}
+
+.card p {
+  margin: 5px 0;
+}
+
+/* Grupos */
+.group {
+  display: flex;
+
+  margin: 20px auto;
+  width: 100%;
+}
+
+.group h2 {
+  background-color: #d32f2f;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 0;
+}
+
+/* Lista de Alumnos */
+#alumnos-lista {
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+  align-items: center;
+}
+
+.alumno {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 30px;
+  margin-bottom: 10px;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.alumno p {
+  margin: 5px 0;
+}
+
+#mensaje {
+  display: flex;
+  flex-direction: row;
+  font-weight: bold;
+  color: #f1eeee;
+  font-size: xx-large;
+  border: 6px#c62828;
+}

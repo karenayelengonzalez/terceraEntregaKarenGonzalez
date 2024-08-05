@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registro de Alumnos</title>
+    <link rel="stylesheet" href="./style.css" />
+    <style></style>
+  </head>
+  <body>
+    <header>
+      <section class="titulo">
+        <h1>Excursiones 2024 4° "A"</h1>
+      </section>
+    </header>
+    <main>
+      <div class="formulario">
+        <form id="registro-form">
+          <legend class="tituloFormulario">
+            Completa los Datos para la Excursión
+          </legend>
+          <label for="nombre">Nombre del Alumno:</label>
+          <input type="text" id="nombre" name="nombre" required />
+          <label for="apellido">Apellido del Alumno:</label>
+          <input type="text" id="apellido" name="apellido" required />
+          <label for="dni">DNI:</label>
+          <input type="text" id="dni" name="dni" required />
+          <label for="genero">Género del Alumno:</label>
+          <select id="genero" name="genero" required>
+            <option value="masculino">Masculino</option>
+            <option value="femenino">Femenino</option>
+          </select>
+          <label for="autorizacion">Autorización para las actividades:</label>
+          <select id="autorizacion" name="autorizacion" required>
+            <option value="si">Sí</option>
+            <option value="no">No</option>
+          </select>
+          <label for="comedor">¿Desea incluir el comedor?</label>
+          <select id="comedor" name="comedor" required>
+            <option value="si">Sí</option>
+            <option value="no">No</option>
+          </select>
+          <button type="button" onclick="registrarAlumno()">
+            Registrar Alumno
+          </button>
+        </form>
+      </div>
+
+      <div id="grupo-ninos" class="group">
+        <h2>Grupo de Niños</h2>
+      </div>
+
+      <div id="grupo-ninas" class="group">
+        <h2>Grupo de Niñas</h2>
+      </div>
+      <div id="alumnos-lista" class="group">
+        <h2>Lista de Alumnos Registrados</h2>
+      </div>
+      <div id="mensaje" class="group"></div>
+    </main>
+    <footer></footer>
+    <script src="main.js"></script>
+  </body>
+</html>
