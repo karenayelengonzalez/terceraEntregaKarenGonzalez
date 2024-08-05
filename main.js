@@ -1,5 +1,5 @@
-let contadorNiños = 0;
-let contadorNiñas = 0;
+let contadorNinos = 0;
+let contadorNinas = 0;
 const maxAlumnos = 20;
 
 function getStoredData() {
@@ -50,9 +50,9 @@ function registrarAlumno() {
 
   niñosInscriptos.push(nuevoAlumno);
   if (genero === "masculino") {
-    contadorNiños++;
+    contadorNinos++;
   } else if (genero === "femenino") {
-    contadorNiñas++;
+    contadorNinas++;
   }
 
   saveData();
