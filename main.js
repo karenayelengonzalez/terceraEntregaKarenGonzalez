@@ -12,7 +12,6 @@ function saveData() {
 }
 
 const niñosInscriptos = getStoredData();
-
 function registrarAlumno() {
   if (niñosInscriptos.length >= maxAlumnos) {
     document.getElementById("mensaje").innerText =
@@ -58,11 +57,89 @@ function registrarAlumno() {
   saveData();
   actualizarCards();
   actualizarLista();
-  document.getElementById(
-    "mensaje"
-  ).innerText = `Usted debera abonar por ${nombre} $${costoTotal}`;
+
+  Swal.fire({
+    title: "Alumno Registrado!",
+    text: `Usted deberá abonar por ${nombre} $${costoTotal}`,
+    icon: "success",
+    confirmButtonText: "Ok",
+  });
 
   document.getElementById("registro-form").reset();
+}
+
+// function registrarAlumno() {
+//   if (niñosInscriptos.length >= maxAlumnos) {
+//     document.getElementById("mensaje").innerText =
+//       "No se pueden inscribir más alumnos. Cupos llenos.";
+//     return;
+//   }
+
+//   const nombre = document.getElementById("nombre").value;
+//   const apellido = document.getElementById("apellido").value;
+//   const dni = document.getElementById("dni").value;
+//   const genero = document.getElementById("genero").value;
+//   const autorizacion = document.getElementById("autorizacion").value;
+//   const incluirComedor = document.getElementById("comedor").value;
+
+//   if (autorizacion === "no") {
+//     document.getElementById("mensaje").innerText = "Gracias por su tiempo.";
+//     return;
+//   }
+
+//   let costoComedor = 0;
+//   if (incluirComedor === "si") {
+//     costoComedor = 25000;
+//   }
+
+//   const costoTotal = 100000 + costoComedor;
+//   const nuevoAlumno = {
+//     nombre: nombre,
+//     apellido: apellido,
+//     dni: dni,
+//     genero: genero,
+//     autorizacion: autorizacion,
+//     incluirComedor: incluirComedor === "si",
+//     costoTotal: costoTotal,
+//   };
+
+//   niñosInscriptos.push(nuevoAlumno);
+//   if (genero === "masculino") {
+//     contadorNinos++;
+//   } else if (genero === "femenino") {
+//     contadorNinas++;
+//   }
+
+//   saveData();
+//   actualizarCards();
+//   actualizarLista();
+//   document.getElementById(
+//     "mensaje"
+//   ).innerText = `Usted debera abonar por ${nombre} $${costoTotal}`;
+
+//   document.getElementById("registro-form").reset();
+// }
+function eliminarAlumno() {
+  const dni = prompt("Ingrese el DNI del alumno a eliminar:");
+
+  if (!dni) {
+    document.getElementById("mensaje").innerText = "DNI no proporcionado.";
+    return;
+  }
+
+  const index = niñosInscriptos.findIndex((alumno) => alumno.dni === dni);
+
+  if (index === -1) {
+    document.getElementById("mensaje").innerText = "Alumno no encontrado.";
+    return;
+  }
+
+  niñosInscriptos.splice(index, 1);
+  saveData();
+  actualizarCards();
+  actualizarLista();
+  document.getElementById("mensaje").innerText =
+    "Alumno eliminado correctamente.";
 }
 
 function actualizarCards() {
